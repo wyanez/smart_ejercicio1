@@ -21,6 +21,8 @@ class Dfs
 		@figures.sort!  # return figures implicit
 	end
 
+	private
+
 	def dfs(row,col)
 		if @visited[row][col].zero? 
 			@visited[row][col] = 1 
