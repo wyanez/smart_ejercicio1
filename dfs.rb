@@ -4,21 +4,21 @@ class Dfs
 		@input = input
 		@count_ones = 0
 		@visited = []
-		@figures = []
 		(0..input.size-1).each do |i|
 			@visited << Array.new(input[i].size,0) 
 		end
 	end
 
 	def process
+		figures = []
 		(0..@input.size-1).each do |row|
 			(0..@input[row].size-1).each do |col|
 				@count_ones = 0
 				dfs(row,col)
-				@figures<<@count_ones unless @count_ones.zero?
+				figures<<@count_ones unless @count_ones.zero?
 			end
 		end	
-		@figures.sort!  # return figures implicit
+		figures.sort!  # return figures implicit
 	end
 
 	private
